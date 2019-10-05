@@ -1,0 +1,48 @@
+<mat-form-field>
+  List length:
+  <input matInput [(ngModel)]="length">
+</mat-form-field>
+
+<mat-form-field>
+  Page size:
+  <input matInput [(ngModel)]="pageSize">
+</mat-form-field>
+<mat-form-field>
+  Page size options:
+  <input matInput
+         [ngModel]="pageSizeOptions"
+         (ngModelChange)="setPageSizeOptions($event)">
+</mat-form-field>
+
+<mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="pageEvent = $event">
+</mat-paginator>
+
+<div *ngIf="pageEvent">
+  <h5>Page Change Event Properties</h5>
+  <div>List length: {{pageEvent.length}}</div>
+  <div>Page size: {{pageEvent.pageSize}}</div>
+  <div>Page index: {{pageEvent.pageIndex}}</div>
+</div>
+<div class="homecontent">
+  <table class="table  table-bordered">
+    <thead>
+      <tr>
+        <th>Userid</th>
+        <th>id</th>
+        <th>title</th>
+        <th>body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of postdata;index as i">
+        <td >{{data.userId}}</td>
+        <td  >{{data.id}}</td>
+        <td >{{data.title}}</td>
+        <td >{{data.body}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,46 @@
+.sidenav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 180px;
+    background: #fff;
+    padding-top: 80px;
+    z-index: 9;
+    box-shadow: 0 0 3px 0 #f2f2f2;
+}
+.sidenav-list{
+    list-style: none;
+    padding: 0;
+}
+.sidenav-list li{
+    
+}
+.hidenav{
+    background: #333;
+    color: #555;
+    padding: 10px;
+    border: none;
+}
+
+.sidenav-list > li > a{
+    display: block;
+    padding: 10px;
+    color: #333;
+    font-size: 16px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+.sidenav-list > li > a .fas{
+    
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.mobsidenav{
+    width: 70px;
+}
+.mobsidenav > .sidenav-list > li > a > span{
+    display: none;
+}
