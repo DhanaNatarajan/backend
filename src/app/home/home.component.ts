@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PageEvent} from '@angular/material/paginator';
 import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-field';
 import { from } from 'rxjs';
+import { FormControl,FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,19 @@ import { from } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+  vendorform = new FormGroup({
+    name : new FormControl(''),
+    contactno : new FormControl(''),
+    phoneno : new FormControl(''),
+    pinno : new FormControl(''),
+    category : new FormControl(),
+    hmvprice : new FormControl(),
+    lmvprice : new FormControl(),
+    simage1 : new FormControl(),
+    simage2 : new FormControl(),
+    simage3 : new FormControl(),
+  });
+  
 
   postdata = [
     {
@@ -107,6 +121,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
+  modelopen :boolean = false;
   length = 100;
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
@@ -116,5 +131,12 @@ export class HomeComponent implements OnInit {
 
   setPageSizeOptions(setPageSizeOptionsInput: string) {
     this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  }
+  openmodel(){
+    this.modelopen = !this.modelopen;
+    console.log(this.modelopen);
+  }
+  vendorsub(){
+    console.log(name);
   }
 }

@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule} from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { from } from 'rxjs';
 
@@ -24,7 +24,7 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,
+    FormsModule,ReactiveFormsModule,
     MatPaginatorModule,MatFormFieldModule,MatTableModule
   ],
   providers: [],

@@ -1,32 +1,38 @@
-<mat-form-field>
-  List length:
-  <input matInput [(ngModel)]="length">
-</mat-form-field>
 
-<mat-form-field>
-  Page size:
-  <input matInput [(ngModel)]="pageSize">
-</mat-form-field>
-<mat-form-field>
-  Page size options:
-  <input matInput
-         [ngModel]="pageSizeOptions"
-         (ngModelChange)="setPageSizeOptions($event)">
-</mat-form-field>
 
-<mat-paginator [length]="length"
-              [pageSize]="pageSize"
-              [pageSizeOptions]="pageSizeOptions"
-              (page)="pageEvent = $event">
-</mat-paginator>
 
-<div *ngIf="pageEvent">
-  <h5>Page Change Event Properties</h5>
-  <div>List length: {{pageEvent.length}}</div>
-  <div>Page size: {{pageEvent.pageSize}}</div>
-  <div>Page index: {{pageEvent.pageIndex}}</div>
-</div>
 <div class="homecontent">
+    <!-- <mat-form-field>
+        List length:
+        <input matInput [(ngModel)]="length">
+      </mat-form-field>
+      
+      <mat-form-field>
+        Page size:
+        <input matInput [(ngModel)]="pageSize">
+      </mat-form-field>
+      <mat-form-field>
+        Page size options:
+        <input matInput
+               [ngModel]="pageSizeOptions"
+               (ngModelChange)="setPageSizeOptions($event)">
+      </mat-form-field>
+      
+      <mat-paginator [length]="length"
+                    [pageSize]="pageSize"
+                    [pageSizeOptions]="pageSizeOptions"
+                    (page)="pageEvent = $event">
+      </mat-paginator>
+    <div *ngIf="pageEvent">
+        <h5>Page Change Event Properties</h5>
+        <div>List length: {{pageEvent.length}}</div>
+        <div>Page size: {{pageEvent.pageSize}}</div>
+        <div>Page index: {{pageEvent.pageIndex}}</div>
+      </div> -->
+
+      <div class="butbox">
+        <button class="openboxbtn" (click)="openmodel()">Add vendor</button>
+      </div>
   <table class="table  table-bordered">
     <thead>
       <tr>
@@ -45,4 +51,51 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+
+<div class="boxmodel" *ngIf="modelopen">
+  <div class="boxmodelcontent">
+    <h2 class="modelhead">Vendor add</h2>
+    <div class="model-body row" [formGroup]="vendorform">
+      <div class="modelform col-sm-6">
+        <label>Name</label>
+        <input type="text" ngModel formControlName="name">
+      </div>
+      <div class="modelform col-sm-6">
+        <label>Pin</label>
+        <input type="number" ngModel formControlName="pinno">
+      </div>
+      <div class="modelform col-sm-6">
+        <label>contactno</label>
+        <input type="number" ngModel formControlName="contactno">
+      </div>
+      <div class="modelform col-sm-6">
+        <label>Phone Number</label>
+        <input type="number" ngModel formControlName="phoneno">
+      </div>
+      <div class="modelform col-sm-6">
+        <label>Category</label>
+        <input type="text" ngModel formControlName="category">
+      </div>
+      <div class="modelform col-sm-6">
+        <label>HMV Price</label>
+        <input type="text" ngModel formControlName="hmvprice">
+      </div>
+      <div class="modelform col-sm-6">
+        <label>LMV Price</label>
+        <input type="text" ngModel formControlName="lmvprice">
+      </div>
+      <div class="modelform col-sm-6">
+        <label>Price 2 Wheel</label>
+        <input type="text" ngModel formControlName="hmvprice">
+      </div>
+      <div class="modelform col-sm-12 center">
+        <button (click)="vendorsub()" class="ventbtn">Submit</button>
+      </div>
+      <div class="col-sm-12"></div>
+    </div>
+    
+    
+  </div>
 </div>
